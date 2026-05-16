@@ -100,7 +100,7 @@ Firewall Rule Example:
 
 ---
 
-## 4. Network Segmentation — تقسيم الشبكة {#network-segmentation}
+## Network-segmentation
 
 أهم مبدأ في الـ Network Security هو الـ **Segmentation** — تقسيم الشبكة لـ Zones منفصلة. لو Hacker دخل Zone واحدة، مش هيقدر يتحرك لباقي الشبكة بسهولة.
 
