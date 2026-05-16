@@ -5,8 +5,7 @@
 # Secure Network Design for Small Business (50 Employees)
 
 ## Table of Contents
-
-1. [Introduction — ليه محتاجين Network Security؟](#introduction)
+- [Introduction — ليه محتاجين Network Security?](#introduction)
 2. [Understanding the Network Requirements](#network-requirements)
 3. [Security Devices — الأجهزة الأمنية المطلوبة](#security-devices)
 4. [Network Segmentation — تقسيم الشبكة](#network-segmentation)
@@ -24,7 +23,7 @@
 
 ---
 
-## 1. Introduction — ليه محتاجين Network Security? {#introduction}
+## introduction
 
 تخيل إن الشبكة زي البيت — محتاج أبواب وشبابيك وكاميرات مراقبة. مش كل الناس المفروض يدخلوا كل أوضة، وفيه أوضة فيها حاجات تمانها عالي (زي خزنة الفلوس) محتاجة حماية أكتر.
 
