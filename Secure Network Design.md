@@ -5,21 +5,22 @@
 # Secure Network Design for Small Business (50 Employees)
 
 ## Table of Contents
+
 - [Introduction — ليه محتاجين Network Security?](#introduction)
-2. [Understanding the Network Requirements](#network-requirements)
-3. [Security Devices — الأجهزة الأمنية المطلوبة](#security-devices)
-4. [Network Segmentation — تقسيم الشبكة](#network-segmentation)
-5. [Full Network Topology Diagram](#topology-diagram)
-6. [Zone-by-Zone Deep Dive](#zone-deep-dive)
+- [Understanding the Network Requirements](#network-requirements)
+- [Security Devices — الأجهزة الأمنية المطلوبة](#security-devices)
+- [Network Segmentation — تقسيم الشبكة](#network-segmentation)
+- [Full Network Topology Diagram](#topology-diagram)
+- [Zone-by-Zone Deep Dive](#zone-deep-dive)
    - [Internet Edge Zone](#internet-edge)
    - [DMZ — Demilitarized Zone](#dmz-zone)
    - [Internal Employee Network](#internal-network)
    - [Server Zone](#server-zone)
    - [Guest WiFi Zone](#guest-wifi)
    - [Remote Workers](#remote-workers)
-7. [Security Devices Placement Summary](#placement-summary)
-8. [Traffic Flow Analysis](#traffic-flow)
-9. [Summary](#summary)
+- [Security Devices Placement Summary](#placement-summary)
+- [Traffic Flow Analysis](#traffic-flow)
+- [Summary](#summary)
 
 ---
 
@@ -39,7 +40,7 @@
 
 ---
 
-## 2. Understanding the Network Requirements {#network-requirements}
+## network-requirements
 
 قبل ما نبدأ نصمم، لازم نفهم الـ **Threats** اللي بنحارب:
 
@@ -60,7 +61,7 @@
 
 ---
 
-## 3. Security Devices — الأجهزة الأمنية المطلوبة {#security-devices}
+## security-devices
 
 دي الأجهزة اللي هنستخدمها في التصميم:
 
