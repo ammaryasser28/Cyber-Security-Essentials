@@ -228,7 +228,7 @@ graph TB
 
 ## Zone-deep-dive
 
-### Internet Edge Zone {#internet-edge}
+### Internet-edge
 
 ده أول خط دفاع — نقطة الدخول الوحيدة من الإنترنت.
 
