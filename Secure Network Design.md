@@ -24,7 +24,7 @@
 
 ---
 
-## introduction
+## Introduction
 
 تخيل إن الشبكة زي البيت — محتاج أبواب وشبابيك وكاميرات مراقبة. مش كل الناس المفروض يدخلوا كل أوضة، وفيه أوضة فيها حاجات تمانها عالي (زي خزنة الفلوس) محتاجة حماية أكتر.
 
@@ -40,7 +40,7 @@
 
 ---
 
-## network-requirements
+## Network-requirements
 
 قبل ما نبدأ نصمم، لازم نفهم الـ **Threats** اللي بنحارب:
 
@@ -61,7 +61,7 @@
 
 ---
 
-## security-devices
+## Security-devices
 
 دي الأجهزة اللي هنستخدمها في التصميم:
 
@@ -129,7 +129,7 @@ Firewall Rule Example:
 
 ---
 
-## 5. Full Network Topology Diagram {#topology-diagram}
+## Topology-diagram
 
 ```mermaid
 graph TB
@@ -226,7 +226,7 @@ graph TB
 
 ---
 
-## 6. Zone-by-Zone Deep Dive {#zone-deep-dive}
+## Zone-deep-dive
 
 ### Internet Edge Zone {#internet-edge}
 
@@ -261,7 +261,7 @@ graph LR
 
 ---
 
-### DMZ — Demilitarized Zone {#dmz-zone}
+### Dmz-zone
 
 الـ DMZ هي منطقة "محايدة" — مش من الإنترنت ومش من الشبكة الداخلية تمامًا. الـ Public Services بتتحط هنا.
 
@@ -293,7 +293,7 @@ graph TB
 
 ---
 
-### Internal Employee Network {#internal-network}
+### Internal-network
 
 شبكة الموظفين على **VLAN 10** — معزولة عن الـ Guest WiFi وعن الـ Servers.
 
@@ -328,7 +328,7 @@ graph LR
 
 ---
 
-### Server Zone {#server-zone}
+### Server-zone
 
 أحرص نقطة في الشبكة — فيها أهم البيانات.
 
@@ -360,7 +360,7 @@ graph TB
 
 ---
 
-### Guest WiFi Zone {#guest-wifi}
+### Guest-wifi
 
 الضيوف والعملاء محتاجين إنترنت — بس مش شبكتنا الداخلية.
 
@@ -396,7 +396,7 @@ Client Isolation: ON  ← مهم! يمنع الـ Guests يشوفوا بعض
 
 ---
 
-### Remote Workers {#remote-workers}
+### Remote-workers
 
 الموظفين اللي بيشتغلوا من البيت محتاجين يوصلوا للشبكة الداخلية بشكل آمن.
 
@@ -434,7 +434,7 @@ sequenceDiagram
 
 ---
 
-## 7. Security Devices Placement Summary {#placement-summary}
+## Placement-summary
 
 | الجهاز | مكانه في الشبكة | وظيفته |
 |---|---|---|
@@ -452,7 +452,7 @@ sequenceDiagram
 
 ---
 
-## 8. Traffic Flow Analysis {#traffic-flow}
+## Traffic-flow
 
 ### Scenario 1: زبون بيفتح الموقع من الإنترنت
 
@@ -516,7 +516,7 @@ graph LR
 
 ---
 
-## 10. Summary {#summary}
+## Summary
 
 ### ملخص التصميم
 
