@@ -4,23 +4,23 @@
 
 ## Table of Contents
 
-1. [What Are You Protecting?](#1-what-are-you-protecting)
+- [What Are You Protecting?](#1-what-are-you-protecting)
    - [Critical Assets & Their Importance](#11-critical-assets--their-importance)
    - [Assessing the Severity of an Incident](#12-assessing-the-severity-of-an-incident)
    - [User Accounts: Administrative vs. Standard](#13-user-accounts-administrative-vs-standard)
    - [Dark Web Credential Exposure](#14-dark-web-credential-exposure)
    - [Understanding What the Attacker Wants](#15-understanding-what-the-attacker-wants)
-2. [Communication Flow](#2-communication-flow)
+- [Communication Flow](#2-communication-flow)
    - [Why Communication Flow Matters](#21-why-communication-flow-matters)
    - [Types of Communication in an Organization](#22-types-of-communication-in-an-organization)
    - [Asset Inventory & Baseline](#23-asset-inventory--baseline)
-3. [Summary](#3-summary)
+- [Summary](#3-summary)
 
 ---
 
-## 1. What Are You Protecting?
+## What Are You Protecting?
 
-### 1.1 Critical Assets & Their Importance
+### Critical Assets & Their Importance
 
 أول سؤال لازم يكون عندك كـ SOC Analyst هو: **إيه اللي بتحميه؟**
 
@@ -34,7 +34,7 @@
 
 ---
 
-### 1.2 Assessing the Severity of an Incident
+### Assessing the Severity of an Incident
 
 لما بتحصل Incident، بتحتاج تقيّم **Severity** — يعني مدى الخطورة. وده بيتوقف مباشرة على نوع الـ Asset اللي اتأثرت.
 
@@ -61,7 +61,7 @@ Severity = f(Asset Criticality + Data Sensitivity + Blast Radius)
 
 ---
 
-### 1.3 User Accounts: Administrative vs. Standard
+### User Accounts: Administrative vs. Standard
 
 من أكتر الأمثلة وضوحاً على أهمية معرفة الـ Assets هو الفرق بين نوعين من الـ Accounts:
 
@@ -89,7 +89,7 @@ graph TD
 
 ---
 
-### 1.4 Dark Web Credential Exposure
+### Dark Web Credential Exposure
 
 في Security Solutions بتراقب الـ **Dark Web** وبتنبهك لما Credentials من المؤسسة بتظهر هناك — يعني حد باع أو نشر بيانات دخول موظفين بتاعتك.
 
@@ -121,7 +121,7 @@ graph TD
 
 ---
 
-### 1.5 Understanding What the Attacker Wants
+### Understanding What the Attacker Wants
 
 مش بس مهم تعرف إيه عندك — مهم كمان تفكر زي الـ Attacker وتفهم **هو عايز إيه**.
 
@@ -151,9 +151,9 @@ graph LR
 
 ---
 
-## 2. Communication Flow
+## Communication Flow
 
-### 2.1 Why Communication Flow Matters
+### Why Communication Flow Matters
 
 الـ **Communication Flow** هو من أهم الحاجات اللي لازم تفهمها عشان تنجح كـ SOC Analyst — لأنك مش بس لازم تعرف الـ Assets، لازم كمان تعرف **مين بيكلم مين وإزاي**.
 
@@ -168,7 +168,7 @@ graph LR
 
 ---
 
-### 2.2 Types of Communication in an Organization
+### Types of Communication in an Organization
 
 في أنواع مختلفة من الـ Communication اللي لازم تفهمها:
 
@@ -201,7 +201,7 @@ graph TD
 
 ---
 
-### 2.3 Asset Inventory & Baseline
+### Asset Inventory & Baseline
 
 عشان تقدر تحكم على أي Communication إنه **Normal أو Suspicious**، محتاج حاجتين:
 
@@ -240,7 +240,7 @@ graph LR
 
 ---
 
-## 3. Summary
+## Summary
 
 ### الخلاصة
 
