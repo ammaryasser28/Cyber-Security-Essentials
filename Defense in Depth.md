@@ -8,11 +8,11 @@
 - [ليه محتاجين أكتر من Layer واحدة؟](#ليه-محتاجين-أكتر-من-layer-واحدة)
 - [مثال عملي: من Firewall فقط لـ Full Defense Stack](#مثال-عملي-من-firewall-فقط-لـ-full-defense-stack)
 - [The Layers of Defense in Depth](#the-layers-of-defense-in-depth)
-  - [1. Perimeter Security](#1-perimeter-security)
-  - [2. Network Security](#2-network-security)
-  - [3. Host Security](#3-host-security)
-  - [4. Application Security](#4-application-security)
-  - [5. Data Security](#5-data-security)
+  - [Perimeter Security](#1-perimeter-security)
+  - [Network Security](#2-network-security)
+  - [Host Security](#3-host-security)
+  - [Application Security](#4-application-security)
+  - [Data Security](#5-data-security)
 - [Defense in Depth — Full Architecture Diagram](#defense-in-depth--full-architecture-diagram)
 - [Summary](#summary)
 
@@ -98,7 +98,7 @@ graph TD
 
 ---
 
-### 1. Perimeter Security
+### Perimeter Security
 
 الـ **Perimeter Security** هي **أول خط دفاع** — الحاجة اللي بتتحكم في إيه اللي بيدخل وبيخرج من حدود الـ Network بتاعتك.
 
@@ -133,7 +133,7 @@ graph LR
 
 ---
 
-### 2. Network Security
+### Network Security
 
 بعد ما الـ Traffic عدى الـ Perimeter، الـ **Network Security** بتحمي الـ **Internal Network** من الداخل.
 
@@ -175,7 +175,7 @@ graph TD
 
 ---
 
-### 3. Host Security
+### Host Security
 
 الـ **Host Security** هي الطبقة اللي بتحمي كل **Device** أو **Server** على حدة — من جوا.
 
@@ -223,7 +223,7 @@ graph TD
 
 ---
 
-### 4. Application Security
+### Application Security
 
 الـ **Application Security** بتحمي الـ **Application نفسها** من جوا — يعني الـ Code والـ Logic اللي شغالة عليهم.
 
@@ -272,7 +272,7 @@ graph LR
 
 ---
 
-### 5. Data Security
+### Data Security
 
 الـ **Data Security** هي الطبقة الأعمق — بتحمي **البيانات نفسها** حتى لو كل الطبقات التانية اتكسرت.
 
