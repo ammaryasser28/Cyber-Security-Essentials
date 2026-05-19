@@ -12,7 +12,7 @@
 - [LM Hash — الجيل الأول](#lm-hash--الجيل-الأول)
 - [NTLM Hash — الجيل التاني](#ntlm-hash--الجيل-التاني)
 - [NTLMv2 — الجيل الأحدث](#ntlmv2--الجيل-الأحدث)
-- [Kerberos vs NTLMv2 — متى يُستخدم كل منهما؟](#kerberos-vs-ntlmv2--متى-يستخدم-كل-منهما)
+- [Kerberos vs NTLMv2 - When to Use Each](#kerberos-vs-ntlmv2---when-to-use-each)
 - [NTLMv2 Authentication Mechanism](#ntlmv2-authentication-mechanism)
 - [Summary](#summary)
 
@@ -177,7 +177,7 @@ graph TD
 
 ---
 
-## Kerberos vs NTLMv2 — متى يُستخدم كل منهما؟
+## Kerberos vs NTLMv2 - When to Use Each
 
 ### ليه Kerberos أحسن؟
 
