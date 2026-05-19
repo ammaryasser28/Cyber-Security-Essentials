@@ -13,7 +13,7 @@
 - [NTLM Hash — الجيل التاني](#ntlm-hash--الجيل-التاني)
 - [NTLMv2 — الجيل الأحدث](#ntlmv2--الجيل-الأحدث)
 - [Kerberos vs NTLMv2 — متى يُستخدم كل منهما؟](#kerberos-vs-ntlmv2--متى-يستخدم-كل-منهما)
-- [آلية عمل NTLMv2 Authentication](#آلية-عمل-ntlmv2-authentication)
+- [NTLMv2 Authentication Mechanism](#ntlmv2-authentication-mechanism)
 - [Summary](#summary)
 
 ---
@@ -205,8 +205,7 @@ graph TD
 
 ---
 
-## آلية عمل NTLMv2 Authentication
-
+## NTLMv2 Authentication Mechanism
 ### الخطوات بالتفصيل
 
 ```mermaid
