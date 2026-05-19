@@ -1,10 +1,12 @@
 > **الهدف من الـ Section ده:**  
 > هتفهم إزاي الـ Passwords بيتخزنوا بأمان من غير ما يتحفظوا كـ Plain Text، وهتعرف الفرق بين الـ Algorithms المختلفة زي LM و NTLM و NTLMv2، وهتفهم ليه الـ Salting والـ Peppering مهمين لحماية الـ Passwords من الـ Attackers.
+
+
 ---
 
-
 ## Table of Contents
-- [ليه مش بنخزن الـ Passwords كـ Plain Text](#ليه-مش-بنخزن-الـ-passwords-كـ-plain-text)
+
+- [ليه مش بنخزن الـ Passwords كـ Plain Text؟](#ليه-مش-بنخزن-الـ-passwords-كـ-plain-text)
 - [Password Hashing — الفكرة الأساسية](#password-hashing--الفكرة-الأساسية)
 - [Salting و Peppering](#salting-و-peppering)
 - [LM Hash — الجيل الأول](#lm-hash--الجيل-الأول)
