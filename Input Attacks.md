@@ -5,26 +5,26 @@
 
 ## Table of Contents
 
-- [1. What are Input Attacks?](#1-what-are-input-attacks)
-- [2. Where Do Input Attacks Happen?](#2-where-do-input-attacks-happen)
-- [3. How to Mitigate Input Attacks](#3-how-to-mitigate-input-attacks)
-- [4. OS Command Injection](#4-os-command-injection)
-  - [4.1 How it Works](#41-how-it-works)
-  - [4.2 Real-World Example](#42-real-world-example)
-  - [4.3 Prevention](#43-prevention)
-- [5. Buffer Overflow](#5-buffer-overflow)
-  - [5.1 How Memory Buffers Work](#51-how-memory-buffers-work)
-  - [5.2 What Happens During Overflow](#52-what-happens-during-overflow)
-- [6. SQL Injection (SQLi)](#6-sql-injection-sqli)
-  - [6.1 How it Works](#61-how-it-works)
-  - [6.2 Real-World Example](#62-real-world-example)
-  - [6.3 Breaking Down the Query](#63-breaking-down-the-query)
-- [7. Comparison Table](#7-comparison-table)
-- [8. Summary](#8-summary)
+- [What are Input Attacks?](#what-are-input-attacks)
+- [Where Do Input Attacks Happen?](#where-do-input-attacks-happen)
+- [How to Mitigate Input Attacks](#how-to-mitigate-input-attacks)
+- [OS Command Injection](#os-command-injection)
+  - [How it Works](#how-it-works)
+  - [Real-World Example](#real-world-example)
+  - [Prevention](#prevention)
+- [Buffer Overflow](#buffer-overflow)
+  - [How Memory Buffers Work](#how-memory-buffers-work)
+  - [What Happens During Overflow](#what-happens-during-overflow)
+- [SQL Injection (SQLi)](#sql-injection-sqli)
+  - [How it Works](#how-it-works)
+  - [Real-World Example](#real-world-example)
+  - [Breaking Down the Query](#breaking-down-the-query)
+- [Comparison Table](#comparison-table)
+- [Summary](#summary)
 
 ---
 
-## 1. What are Input Attacks?
+## What are Input Attacks?
 
 الـ **Input Attacks** هي نوع من الـ Cyberattacks اللي فيها الـ Attacker بيعدّل على الـ Data اللي بيبعتها للـ Application، بدل ما يبعت Input عادي، بيبعت Input خبيث عشان يخلي الـ Application يتصرف بطريقة غلط أو ضارة.
 
@@ -46,7 +46,7 @@ Malicious Input: username = "ahmed; cat /etc/passwd"
 
 ---
 
-## 2. Where Do Input Attacks Happen?
+## Where Do Input Attacks Happen?
 
 الـ Input بييجي من أماكن كتير في أي Application، وكل مكان ممكن يبقى نقطة هجوم:
 
@@ -64,7 +64,7 @@ Malicious Input: username = "ahmed; cat /etc/passwd"
 
 ---
 
-## 3. How to Mitigate Input Attacks
+## How to Mitigate Input Attacks
 
 في استراتيجيتين أساسيتين للتعامل مع الـ Input Attacks:
 
@@ -93,9 +93,9 @@ flowchart LR
 
 ---
 
-## 4. OS Command Injection
+## OS Command Injection
 
-### 4.1 How it Works
+### How it Works
 
 أحيانًا الـ Application محتاج ينفذ أوامر على الـ Operating System — زي إنه يعمل Folder، يرن Ping، أو يجيب Date.
 
@@ -114,7 +114,7 @@ flowchart TD
 > [!IMPORTANT]
 > الـ Shell مش بيفرق بين الـ Command اللي الـ Developer كتبه والـ Command اللي الـ Attacker حقنه، هو بيشيل كل حاجة على إنها أمر يتنفذ.
 
-### 4.2 Real-World Example
+### Real-World Example
 
 تخيل إن عندنا Mailbox Application بيعمل Folder باسم الـ User عشان يحط فيه الـ Attachments.
 
@@ -153,7 +153,7 @@ mkdir ahmed; cat /etc/passwd
 | `` ` `` | Execute command inside backticks |
 | `$()` | Command substitution |
 
-### 4.3 Prevention
+### Prevention
 
 **الحل الأفضل: استخدم Built-in Libraries بدل System Calls**
 
@@ -185,9 +185,9 @@ print(current_date)
 
 ---
 
-## 5. Buffer Overflow
+## Buffer Overflow
 
-### 5.1 How Memory Buffers Work
+### How Memory Buffers Work
 
 الـ **Buffer** هو مساحة محدودة في الـ Memory بيخصصها الـ Program لتخزين بيانات مؤقتة.
 
@@ -202,7 +202,7 @@ flowchart LR
     D -- Yes --> F[Data overflows into adjacent memory]
 ```
 
-### 5.2 What Happens During Overflow
+### What Happens During Overflow
 
 الـ **Buffer Overflow** بيحصل لما الـ Program يحاول يكتب في الـ Buffer بيانات أكبر من حجمه، فالبيانات الزيادة بتـ"تفيض" وتكتب فوق الـ Memory المجاورة.
 
@@ -249,9 +249,9 @@ gets(buffer);         // gets() does NOT check input length — dangerous!
 
 ---
 
-## 6. SQL Injection (SQLi)
+## SQL Injection (SQLi)
 
-### 6.1 How it Works
+### How it Works
 
 الـ **SQL Injection** بيحصل لما الـ Application يبني SQL Query باستخدام الـ User Input من غير ما يعمل Sanitization، فالـ Attacker يقدر يحقن SQL Commands تغير سلوك الـ Query.
 
@@ -265,7 +265,7 @@ flowchart TD
     F --> G[Data leak / bypass auth / delete data]
 ```
 
-### 6.2 Real-World Example
+### Real-World Example
 
 **Normal Login Request:**
 ```
@@ -290,7 +290,7 @@ SELECT * FROM users WHERE username = 'admin' AND password = '' or userID='admin'
 > [!WARNING]
 > الـ `--` في آخر الـ Query ده **SQL Comment**. كل اللي بعده بيتعدّ Comment ومش بيتنفذ. الـ Attacker بيستخدمه عشان يلغي باقي الـ Query الأصلية ويتحكم في النتيجة.
 
-### 6.3 Breaking Down the Query
+### Breaking Down the Query
 
 خلينا نفهم الـ SQL Query الأصلية:
 
@@ -338,7 +338,7 @@ cursor.execute(query, (username, password))
 
 ---
 
-## 7. Comparison Table
+## Comparison Table
 
 | Attack | Target | How it Works | Primary Impact | Prevention |
 |---|---|---|---|---|
@@ -348,7 +348,7 @@ cursor.execute(query, (username, password))
 
 ---
 
-## 8. Summary
+## Summary
 
 ### Key Takeaways
 
