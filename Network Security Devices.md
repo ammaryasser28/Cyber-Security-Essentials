@@ -5,19 +5,19 @@
 
 ## Table of Contents
 
-[Why Network Security Devices Exist](#why-network-security-devices-exist)
-[Firewalls: The Core Guardian](#firewalls-the-core-guardian)
+- [Why Network Security Devices Exist](#why-network-security-devices-exist)
+- [Firewalls: The Core Guardian](#firewalls-the-core-guardian)
    - [Firewall Locations](#firewall-locations)
    - [Firewall Benefits vs Shortcomings](#firewall-benefits-vs-shortcomings)
-[Proxy Server](#proxy-server)
+- [Proxy Server](#proxy-server)
    - [Why Organizations Use Proxies](#why-organizations-use-proxies)
    - [Types of Proxies](#types-of-proxies)
-[Proxy vs Firewall vs WAF](#proxy-vs-firewall-vs-waf)
-[Network Access Control (NAC)](#network-access-control-nac)
-[Load Balancer](#load-balancer)
-[Honeypot](#7-honeypot)
-[How They All Fit Together](#how-they-all-fit-together)
-[Summary](#summary)
+- [Proxy vs Firewall vs WAF](#proxy-vs-firewall-vs-waf)
+- [Network Access Control (NAC)](#network-access-control-nac)
+- [Load Balancer](#load-balancer)
+- [Honeypot](#7-honeypot)
+- [How They All Fit Together](#how-they-all-fit-together)
+- [Summary](#summary)
 
 ---
 
