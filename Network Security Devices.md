@@ -15,7 +15,7 @@
 - [Proxy vs Firewall vs WAF](#proxy-vs-firewall-vs-waf)
 - [Network Access Control (NAC)](#network-access-control-nac)
 - [Load Balancer](#load-balancer)
-- [Honeypot](#7-honeypot)
+- [Honeypot](#honeypot)
 - [How They All Fit Together](#how-they-all-fit-together)
 - [Summary](#summary)
 
