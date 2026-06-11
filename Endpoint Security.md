@@ -5,13 +5,13 @@
 
 ## Table of Contents
 
-[What is an Endpoint](#what-is-an-endpoint)
-[Signature-based Detection](#signature-based-detection)
-[Import Hashing - ImpHash](#import-hashing---imphash)
-[Behavioral Detection](#behavioral-detection)
-[Endpoint Security Solutions](#endpoint-security-solutions)
-[Baselines](#6-baselines)
-[Summary](#summary)
+- [What is an Endpoint](#what-is-an-endpoint)
+- [Signature-based Detection](#signature-based-detection)
+- [Import Hashing - ImpHash](#import-hashing---imphash)
+- [Behavioral Detection](#behavioral-detection)
+- [Endpoint Security Solutions](#endpoint-security-solutions)
+- [Baselines](#6-baselines)
+- [Summary](#summary)
 
 ---
 
