@@ -2,7 +2,11 @@
 |---|---|---|---|
 | Asset Awareness and Traffic Flow | Beginner | ~15 min | None |
 
-  هتفهم إزاي تحدد إيه اللي لازم تحميه في أي شبكة، وإزاي تفرق بين الـ traffic الطبيعي والـ traffic المشبوه.
+> **الهدف من الـ Section ده:**  
+> هتفهم إزاي تحدد إيه اللي لازم تحميه في أي شبكة، وإزاي تفرق بين الـ traffic الطبيعي والـ traffic المشبوه.
+
+
+
 
 
 ## Learning Objectives
