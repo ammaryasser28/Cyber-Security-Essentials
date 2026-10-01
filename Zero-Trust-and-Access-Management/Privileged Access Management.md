@@ -7,7 +7,6 @@
 
 
 
-# Privileged Access Management (PAM)
 
 ## Learning Objectives
 
