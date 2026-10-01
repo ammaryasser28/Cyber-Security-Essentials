@@ -6,6 +6,7 @@
 > هتفهم إزاي المؤسسات بتقرر عملياً مين يقدر يلمس إيه بالظبط، وهتقارن بين نماذج التحكم في الوصول المختلفة (DAC, MAC, RBAC, ABAC)، وهتشوف إزاي حتى الوصول البسيط ممكن يبقى خطر لو محدش راقبه.
 
 
+
 ## Learning Objectives
 
 By the end of this section, you will be able to:
@@ -41,7 +42,6 @@ By the end of this section, you will be able to:
 - [Career Path Connections](#career-path-connections)
 - [Key Terms Glossary](#key-terms-glossary)
 - [Summary](#summary)
-
 
 ## Least Privilege and Separation of Duties
 
@@ -184,11 +184,7 @@ flowchart TD
 
 ### Privileged Access Management (PAM)
 
-**PAM** بيؤمّن الـ accounts اللي عندها صلاحيات مرتفعة (زي مديري الأنظمة) عن طريق:
-
-- **Credential vault:** خزنة مركزية لبيانات الدخول الحساسة.
-- **موافقة إلزامية (mandatory approval)** قبل استخدام أي صلاحية مرتفعة.
-- **Just-In-Time (JIT) access:** الصلاحيات المرتفعة بتكون فعالة **بس للوقت اللازم**، وبعدين بتتلغى أوتوماتيك.
+**PAM** بيؤمّن الـ accounts اللي عندها صلاحيات مرتفعة (زي مديري الأنظمة) عن طريق **credential vaulting**، و**موافقة إلزامية** قبل استخدام أي صلاحية مرتفعة، و**Just-In-Time (JIT) access** (الصلاحيات المرتفعة فعالة بس للوقت اللازم، وبتتلغى أوتوماتيك بعد كده).
 
 ```mermaid
 flowchart LR
@@ -200,6 +196,8 @@ flowchart LR
 
 > [!IMPORTANT]
 > PAM is not a replacement for RBAC or ABAC; it is an additional layer specifically for the highest-risk accounts. Even a well-designed RBAC system needs PAM if administrator accounts stay permanently elevated instead of only activating when actually needed.
+
+للتفصيل الكامل عن أدوات الـ PAM (session isolation, credential vaulting, password rotation, break-glass accounts)، شوف الملف المخصص: **Privileged Access Management (PAM)**.
 
 ## Choosing the Right Model
 
