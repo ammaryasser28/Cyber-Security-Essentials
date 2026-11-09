@@ -1,0 +1,30 @@
+# Tells the notes site (ammaryasser28.github.io) that a note changed, so it rebuilds its index and
+# draws the diagrams right away. Needs the SITE_DISPATCH_TOKEN secret in this repo.
+name: Update the notes site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.md'
+  workflow_dispatch:
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Tell the site a note changed
+        env:
+          TOKEN: ${{ secrets.SITE_DISPATCH_TOKEN }}
+        run: |
+          if [ -z "$TOKEN" ]; then
+            echo "::warning::SITE_DISPATCH_TOKEN is not set, so the site will pick this up on its next scheduled check."
+            exit 0
+          fi
+          curl -fsS -X POST \
+            -H "Authorization: Bearer $TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            https://api.github.com/repos/ammaryasser28/ammaryasser28.github.io/dispatches \
+            -d '{"event_type":"notes-changed","client_payload":{"repo":"${{ github.repository }}"}}'
+          echo "The site was told to update."
