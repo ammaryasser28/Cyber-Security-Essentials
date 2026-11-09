@@ -1,5 +1,7 @@
-# Tells the notes site (ammaryasser28.github.io) that a note changed, so it rebuilds its index and
-# draws the diagrams right away. Needs the SITE_DISPATCH_TOKEN secret in this repo.
+# Keeps the notes site (ammaryasser28.github.io) in step with this course, with nothing to set up.
+# On every push that touches a note, it draws all of this course's Mermaid diagrams ahead of time
+# with the site's own code, in both themes, and saves them in .site/ in this repo. The site reads
+# them from here, so every diagram shows instantly and in the course's colours.
 name: Update the notes site
 
 on:
@@ -9,22 +11,60 @@ on:
       - '**.md'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
+concurrency:
+  group: site-data
+  cancel-in-progress: true
+
 jobs:
-  notify:
+  build:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
-      - name: Tell the site a note changed
-        env:
-          TOKEN: ${{ secrets.SITE_DISPATCH_TOKEN }}
+      - uses: actions/checkout@v4
+        with:
+          path: course
+
+      - uses: actions/checkout@v4
+        with:
+          repository: ammaryasser28/ammaryasser28.github.io
+          path: site
+
+      - name: Rebuild this course's index
+        id: course
         run: |
-          if [ -z "$TOKEN" ]; then
-            echo "::warning::SITE_DISPATCH_TOKEN is not set, so the site will pick this up on its next scheduled check."
-            exit 0
-          fi
-          curl -fsS -X POST \
-            -H "Authorization: Bearer $TOKEN" \
-            -H "Accept: application/vnd.github+json" \
-            -H "X-GitHub-Api-Version: 2022-11-28" \
-            https://api.github.com/repos/ammaryasser28/ammaryasser28.github.io/dispatches \
-            -d '{"event_type":"notes-changed","client_payload":{"repo":"${{ github.repository }}"}}'
-          echo "The site was told to update."
+          repo="${{ github.event.repository.name }}"
+          lower="$(echo "$repo" | tr '[:upper:]' '[:lower:]')"
+          mkdir -p clones
+          ln -s "$GITHUB_WORKSPACE/course" "clones/$lower"
+          slug="$(python3 -c "import json, sys; print(next(t['slug'] for t in json.load(open('site/data/manifest.json'))['tracks'] if t['repo'] == sys.argv[1]))" "$repo")"
+          echo "slug=$slug" >> "$GITHUB_OUTPUT"
+          cd site
+          python3 tools/manifest.py "$GITHUB_WORKSPACE/clones" data/manifest.json "$slug"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install the headless browser
+        working-directory: site
+        run: |
+          npm install --no-save --no-package-lock playwright@1.49.1
+          npx playwright install --with-deps chromium
+
+      - name: Draw this course's diagrams
+        working-directory: site
+        run: TRACK="${{ steps.course.outputs.slug }}" OUT_DIR="$GITHUB_WORKSPACE/course/.site" NOTES_DIR="$GITHUB_WORKSPACE/clones" node tools/prerender.mjs
+
+      - name: Save them in this repo
+        working-directory: course
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .site
+          if git diff --cached --quiet; then echo "Nothing changed"; exit 0; fi
+          git commit -m "Update the notes site data"
+          git pull --rebase origin main
+          git push
