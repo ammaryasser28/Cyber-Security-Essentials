@@ -1,10 +1,12 @@
 # Cybersecurity Essentials — Study Notes
 
-![Defensive Security](https://img.shields.io/badge/Defensive%20Security-informational) ![SOC](https://img.shields.io/badge/SOC-informational)
+[![Read online](https://img.shields.io/badge/Read%20online-Blue%20Team%20Notes-2747c9?logo=bookstack&logoColor=white)](https://ammaryasser28.github.io/?t=essentials) ![Defensive Security](https://img.shields.io/badge/Defensive%20Security-informational) ![SOC](https://img.shields.io/badge/SOC-informational)
 
 Structured notes for the **Cybersecurity Essentials** course of a SOC-track Cybersecurity Diploma. They cover the defensive side of security end to end: identity and access, Active Directory, network defense, endpoint and mobile security, data loss prevention, ransomware resilience, and the frameworks SOC teams use to describe attacks.
 
-> 🌐 **Language:** explanations are written in Arabic (Egyptian dialect) with all technical terms and commands kept in English.
+📖 **Read it online:** every note in this repo is on [Blue Team Notes](https://ammaryasser28.github.io/?t=essentials), with interactive diagrams, search across all four courses, and progress tracking.
+
+> 🌐 **Language:** the notes are written in Arabic (Egyptian dialect), with every technical term and command kept in English. Each note also has a full English version: switch to **EN** at the top of [the site](https://ammaryasser28.github.io/?t=essentials&lang=en).
 
 ## What's Covered
 
@@ -96,7 +98,7 @@ Structured notes for the **Cybersecurity Essentials** course of a SOC-track Cybe
 
 ---
 
-**Author:** Amr Yasser — SOC Analyst | Cybersecurity Mentor at Route Academy  
+**Author:** Bn Yasser — SOC Analyst  
 [LinkedIn](https://www.linkedin.com/in/bn-yasser-424bb4215/) · [GitHub](https://github.com/ammaryasser28)
 
 ⭐ If these notes help you, consider giving the repo a star.
