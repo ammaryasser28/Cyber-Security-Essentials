@@ -1,0 +1,231 @@
+| Topic | Level | Reading Time | Prerequisites |
+|---|---|---|---|
+| Penetration Testing, Red Teaming, and Purple Teaming | Beginner | ~20 min | Vulnerability Assessment and Risk Scoring |
+
+> **The goal of this section:**  
+> You'll understand exactly what a penetration test is and why written authorization is what separates it from a crime, the real difference between a vulnerability assessment and a pentest, and between a pentest and a red team, and how the blue, purple, and white teams complete the picture.
+
+
+## Learning Objectives
+
+By the end of this section, you will be able to:
+
+- Define a **penetration test** and list its goals, its mindset, and the role of **Rules of Engagement (RoE)**.
+- Compare a **vulnerability assessment** and a **penetration test** across method, question answered, exploitation, and breadth versus depth.
+- Define **red teaming** and explain how it uses **TTPs** and how success is measured.
+- Compare **penetration testing** and **red teaming** across goal, scope, duration, focus, awareness, and techniques.
+- Describe the roles of the **blue**, **purple**, and **white** teams, and explain why purple teaming improves detection coverage fastest.
+
+## Table of Contents
+
+- [Learning Objectives](#learning-objectives)
+- [Penetration Testing](#penetration-testing)
+  - [Definition](#definition)
+  - [Goals](#goals)
+  - [Mindset](#mindset)
+  - [Authorization Comes First](#authorization-comes-first)
+- [Vulnerability Assessment Versus Penetration Testing](#vulnerability-assessment-versus-penetration-testing)
+- [Red Teaming](#red-teaming)
+  - [Definition and TTPs](#definition-and-ttps)
+  - [Live and Unannounced](#live-and-unannounced)
+  - [What It Tests and How Success Is Measured](#what-it-tests-and-how-success-is-measured)
+- [Red Teaming Versus Penetration Testing](#red-teaming-versus-penetration-testing)
+  - [Two Different Goals](#two-different-goals)
+  - [Side by Side](#side-by-side)
+- [Blue, Purple, and White Teams](#blue-purple-and-white-teams)
+  - [Blue Team](#blue-team)
+  - [Purple Team](#purple-team)
+  - [White Team](#white-team)
+  - [Why Purple Teaming Works](#why-purple-teaming-works)
+- [Career Path Connections](#career-path-connections)
+- [Key Terms Glossary](#key-terms-glossary)
+- [Summary](#summary)
+
+## Penetration Testing
+
+### Definition
+
+A **penetration test (pentest)** is a **simulated, controlled, and authorized cyberattack** against a system, network, application, or organization.
+
+### Goals
+
+- **Find vulnerabilities before real attackers do.**
+- **Prove how they could be exploited and what the impact would be.**
+- **Meet compliance requirements** (PCI DSS, ISO 27001, and similar).
+
+### Mindset
+
+The tester **thinks and acts like an attacker**, and **actually tries to exploit** weaknesses instead of stopping at finding them.
+
+### Authorization Comes First
+
+**A signed scope and Rules of Engagement (RoE)** define what may be tested, when, and how. **Without written authorization, it is a crime, not a pentest.**
+
+```mermaid
+flowchart TD
+    A["Request to test a system"] --> B{"Signed scope and Rules of Engagement?"}
+    B -->|"Yes"| C["Authorized penetration test"]
+    B -->|"No"| D["Crime, not a pentest"]
+    C --> E["RoE define: what may be tested, when, and how"]
+```
+
+> [!WARNING]
+> Written authorization is not paperwork; it is the legal line between a security professional and a criminal. Testing a system you do not own without a signed scope is illegal even if your intentions are good, and even if you "only looked".
+
+## Vulnerability Assessment Versus Penetration Testing
+
+| Aspect | Vulnerability Assessment | Penetration Test |
+|---|---|---|
+| **Method** | Mostly automated scanning | Manual, creative, built on exploitation |
+| **Question answered** | What weaknesses exist? | What can an attacker **actually** do with them? |
+| **Exploitation** | No | Yes |
+| **Breadth vs depth** | Wide coverage | Depth on selected targets |
+
+**Example:** a scanner reports that port 445 is open. The pentester will try to exploit SMB, gain access, escalate privileges, and move laterally across the network.
+
+In real engagements, **both are delivered as a report** with the findings and the fixes.
+
+```mermaid
+flowchart LR
+    A["Scanner reports port 445 open"] --> B["Vulnerability assessment stops here: a weakness exists"]
+    A --> C["Pentester tries to exploit SMB"]
+    C --> D["Gains access"]
+    D --> E["Escalates privileges"]
+    E --> F["Moves laterally across the network"]
+```
+
+> [!NOTE]
+> This is the boundary introduced in Vulnerability Assessment and Risk Scoring: an assessment must expose risk without exploiting it. The pentest picks up exactly where the assessment stops and answers the follow-up question, "so what?".
+
+## Red Teaming
+
+### Definition and TTPs
+
+**Red teaming** is a **full simulation of an adversary** that mimics how a real attacker would target the organization. It imitates the **TTPs (Tactics, Techniques, and Procedures)** of real threat actors, as classified in **MITRE ATT&CK**.
+
+### Live and Unannounced
+
+It runs against **live production infrastructure**, often **without the Blue Team knowing** in advance.
+
+### What It Tests and How Success Is Measured
+
+| Aspect | Detail |
+|---|---|
+| **What it tests** | Technology, **people**, and **detection** capability |
+| **How success is measured** | By **objectives**, for example reaching the domain controller or exfiltrating a fake customer database, **and whether the defenders noticed** |
+
+```mermaid
+flowchart TD
+    A["Red team objective: e.g. reach the domain controller"] --> B["Emulate real threat actor TTPs from MITRE ATT&CK"]
+    B --> C["Operate on live production, usually unannounced"]
+    C --> D{"Did the Blue Team notice?"}
+    D -->|"Yes"| E["Detection and response validated"]
+    D -->|"No"| F["Detection gap identified"]
+```
+
+> [!NOTE]
+> This is the engagement-planning use of ATT&CK described in the MITRE ATT&CK file: a known threat group is mapped to the techniques it uses, and the red team emulates exactly that playbook. The point is not just whether the attackers get in, but whether anyone sees them.
+
+## Red Teaming Versus Penetration Testing
+
+### Two Different Goals
+
+| | Penetration Test | Red Team |
+|---|---|---|
+| **Goal** | Find technical vulnerabilities in a **specific, limited scope** (web, internal, or external). The security team **usually knows** it is happening | Test the **overall security posture** across a much wider scope: people, technology, and detection capabilities |
+| **Example** | A bank hires pentesters to test its online banking application, and they find SQL injection, broken authentication, and misconfigurations, documented with remediation steps | Phishing emails test employee awareness **and whether the phishing was detected**. The point is not finding bugs, it is **whether the Blue Team can detect and respond** |
+
+### Side by Side
+
+| Aspect | Penetration Testing | Red Teaming |
+|---|---|---|
+| **Goal** | Find vulnerabilities | Simulate a real attacker |
+| **Scope** | Specific systems | The whole organization |
+| **Duration** | Days to weeks | Weeks to months |
+| **Focus** | Technical flaws | Detection and response |
+| **Awareness** | Usually known to the defenders | Usually unknown |
+| **Techniques** | Exploitation | Social engineering, phishing, and lateral movement |
+
+**The difference is the goal.** A pentest finds vulnerabilities; a red team tests **the organization's ability to detect and respond**.
+
+```mermaid
+flowchart LR
+    A["Pentest: find vulnerabilities in a defined scope"] --> C["Output: findings and remediation steps"]
+    B["Red team: test detection and response across the organization"] --> D["Output: did defenders notice and respond?"]
+```
+
+> [!IMPORTANT]
+> A red team engagement can "fail" technically, for example the attackers never reach the objective, and still be a success if the Blue Team caught them early. The reverse also holds: attackers reaching the objective unseen is the most valuable finding, because it shows a detection gap no vulnerability scan would reveal.
+
+## Blue, Purple, and White Teams
+
+### Blue Team
+
+The **Blue Team** are the **defenders**: the SOC, incident response, and hardening.
+
+### Purple Team
+
+The **Purple Team** means **Red and Blue working together, in the open**. Red runs a technique, Blue checks **whether it was detected**, and they tune the detections **on the spot**. **Unlike blind red team exercises, everyone knows what is happening.**
+
+### White Team
+
+The **White Team** are the **referees**: they set the rules, oversee the exercise, and settle disputes.
+
+### Why Purple Teaming Works
+
+Purple teaming is **the fastest way to improve detection coverage**, because **every attack technique immediately becomes a detection improvement**.
+
+| Team | Role | Awareness |
+|---|---|---|
+| Red | Attacks and simulates real adversaries | Knows the plan |
+| Blue | Defends, detects, and responds | In a red team: usually **doesn't know**. In purple: **knows** |
+| Purple | Open collaboration between the two to tune detections | Everyone knows |
+| White | Referees who set the rules and settle disputes | Knows the full framework |
+
+```mermaid
+flowchart LR
+    A["Red runs a technique"] --> B["Blue checks: was it detected?"]
+    B --> C{"Detected?"}
+    C -->|"No"| D["Tune or build the detection on the spot"]
+    C -->|"Yes"| E["Confirm and move to the next technique"]
+    D --> A
+    E --> A
+```
+
+> [!TIP]
+> A clean way to explain purple teaming in an interview: a red team tests whether defenders notice, while a purple team makes sure they will notice next time. This connects to the detection coverage heatmap idea in the MITRE ATT&CK file: every technique tested in a purple exercise either turns a gap green or proves it was already covered.
+
+## Career Path Connections
+
+| Career Path | How This Topic Applies |
+|---|---|
+| SOC Analyst | Blue team work: detections are tested and improved directly through purple team exercises |
+| Penetration Tester | Core role: authorized, exploit-driven testing within a defined scope and Rules of Engagement |
+| GRC | Owns the legal and compliance side: scope, authorization, and compliance-driven testing requirements |
+| Cloud Security | Cloud testing follows the same models, with the added requirement to follow each provider's testing policy |
+
+## Key Terms Glossary
+
+| Term | Definition |
+|---|---|
+| Penetration Test | A controlled, authorized, simulated attack against a system, network, application, or organization |
+| Rules of Engagement (RoE) | The signed agreement defining what may be tested, when, and how |
+| Scope | The set of systems and activities a test is authorized to cover |
+| Red Teaming | A full adversary simulation testing technology, people, and detection capability |
+| TTPs | Tactics, Techniques, and Procedures, the behavior patterns of real threat actors |
+| Blue Team | The defenders: SOC, incident response, and hardening |
+| Purple Team | Red and Blue working together openly to improve detections in real time |
+| White Team | The referees who define rules and oversee an exercise |
+| Lateral Movement | Moving from one compromised system to others inside the network |
+
+## Summary
+
+- **A pentest is a controlled, authorized, simulated attack:** its goal is to find vulnerabilities, prove the impact, and meet compliance.
+- **Written authorization is the line between a pentest and a crime:** a signed scope and RoE.
+- **An assessment asks what exists; a pentest asks what an attacker can do:** the first is automated with no exploitation, the second is manual with exploitation.
+- **A red team simulates a real adversary across the whole organization:** with TTPs from MITRE ATT&CK, on production, often without the defenders knowing.
+- **Pentest versus red team is a difference of goal:** finding vulnerabilities versus testing the ability to detect and respond.
+- **Success in a red team is measured by objectives and by whether defenders noticed.**
+- **Blue defends, purple collaborates, white referees.**
+- **Purple teaming is the fastest route to better detection coverage:** every technique immediately becomes a detection improvement.
+
