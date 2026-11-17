@@ -112,7 +112,7 @@ flowchart TD
 استخدام **عدة طبقات حماية**، بحيث لو واحدة فشلت، طبقة تانية تمسك الهجوم.
 
 > [!NOTE]
-> The full model, with its five core layers (Perimeter, Network, Host, Application, Data), is covered in depth in the Defense in Depth Model file from the Defense in Depth and Evasion Techniques category.
+> The model is usually drawn as five core layers (Perimeter, Network, Host, Application, Data). The layers only add protection when they are independent, so one failure cannot take down the rest.
 
 ### Network Segmentation
 
