@@ -344,6 +344,9 @@ flowchart TD
 > [!TIP]
 > Most real-world breaches involve an attacker who is already inside, moving between systems. East-west controls are what turn a single compromised laptop from a network-wide incident into a contained one.
 
+> [!NOTE]
+> The full worked version of this exercise, with a zone-by-zone deep dive, four traffic-flow scenarios, and an IP addressing scheme, is in [Secure Network Design](../Secure%20Network%20Design.md).
+
 ## Career Path Connections
 
 | Career Path | How This Topic Applies |
