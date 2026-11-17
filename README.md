@@ -21,7 +21,7 @@ Structured notes for the **Cybersecurity Essentials** course of a SOC-track Cybe
 - DLP operations and SIEM integration, ransomware (LockBit case study), backup and recovery
 - Password hashing, salting, peppering, cracking techniques, and SSH key authentication
 
-## Contents (53 notes)
+## Contents (52 notes)
 
 ### Active Directory Fundamentals
 
@@ -105,7 +105,6 @@ Structured notes for the **Cybersecurity Essentials** course of a SOC-track Cybe
 
 ### General Topics
 
-- [Network Security Devices](Network%20Security%20Devices.md)
 - [Pyramid of Pain](Pyramid%20of%20Pain.md)
 - [Secure Network Design](Secure%20Network%20Design.md)
 - [SOC Analyst Fundamentals](SOC%20Analyst%20Fundamentals.md)
