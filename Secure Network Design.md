@@ -20,6 +20,7 @@
    - [Remote Workers](#remote-workers)
 - [Security Devices Placement Summary](#placement-summary)
 - [Traffic Flow Analysis](#traffic-flow)
+- [IP Addressing Scheme](#ip-addressing-scheme)
 - [Summary](#summary)
 
 ---
@@ -40,7 +41,7 @@
 
 ---
 
-## Network-requirements
+## Network Requirements
 
 قبل ما نبدأ نصمم، لازم نفهم الـ **Threats** اللي بنحارب:
 
@@ -61,7 +62,7 @@
 
 ---
 
-## Security-devices
+## Security Devices
 
 دي الأجهزة اللي هنستخدمها في التصميم:
 
@@ -100,7 +101,7 @@ Firewall Rule Example:
 
 ---
 
-## Network-segmentation
+## Network Segmentation
 
 أهم مبدأ في الـ Network Security هو الـ **Segmentation** — تقسيم الشبكة لـ Zones منفصلة. لو Hacker دخل Zone واحدة، مش هيقدر يتحرك لباقي الشبكة بسهولة.
 
@@ -129,7 +130,7 @@ Firewall Rule Example:
 
 ---
 
-## Topology-diagram
+## Topology Diagram
 
 ```mermaid
 graph TB
@@ -226,9 +227,9 @@ graph TB
 
 ---
 
-## Zone-deep-dive
+## Zone Deep Dive
 
-### Internet-edge
+### Internet Edge
 
 ده أول خط دفاع — نقطة الدخول الوحيدة من الإنترنت.
 
@@ -261,7 +262,7 @@ graph LR
 
 ---
 
-### Dmz-zone
+### DMZ Zone
 
 الـ DMZ هي منطقة "محايدة" — مش من الإنترنت ومش من الشبكة الداخلية تمامًا. الـ Public Services بتتحط هنا.
 
@@ -293,7 +294,7 @@ graph TB
 
 ---
 
-### Internal-network
+### Internal Network
 
 شبكة الموظفين على **VLAN 10** — معزولة عن الـ Guest WiFi وعن الـ Servers.
 
@@ -328,7 +329,7 @@ graph LR
 
 ---
 
-### Server-zone
+### Server Zone
 
 أحرص نقطة في الشبكة — فيها أهم البيانات.
 
@@ -360,7 +361,7 @@ graph TB
 
 ---
 
-### Guest-wifi
+### Guest WiFi
 
 الضيوف والعملاء محتاجين إنترنت — بس مش شبكتنا الداخلية.
 
@@ -396,7 +397,7 @@ Client Isolation: ON  ← مهم! يمنع الـ Guests يشوفوا بعض
 
 ---
 
-### Remote-workers
+### Remote Workers
 
 الموظفين اللي بيشتغلوا من البيت محتاجين يوصلوا للشبكة الداخلية بشكل آمن.
 
@@ -434,7 +435,7 @@ sequenceDiagram
 
 ---
 
-## Placement-summary
+## Placement Summary
 
 | الجهاز | مكانه في الشبكة | وظيفته |
 |---|---|---|
@@ -452,7 +453,7 @@ sequenceDiagram
 
 ---
 
-## Traffic-flow
+## Traffic Flow
 
 ### Scenario 1: زبون بيفتح الموقع من الإنترنت
 
@@ -499,7 +500,7 @@ graph LR
 
 ---
 
-## 9. IP Addressing Scheme
+## IP Addressing Scheme
 
 جدول عشان نحدد الـ IP Ranges لكل Zone:
 
