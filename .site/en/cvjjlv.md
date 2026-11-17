@@ -20,6 +20,7 @@
    - [Remote Workers](#remote-workers)
 - [Security Devices Placement Summary](#placement-summary)
 - [Traffic Flow Analysis](#traffic-flow)
+- [IP Addressing Scheme](#ip-addressing-scheme)
 - [Summary](#summary)
 
 ---
@@ -40,7 +41,7 @@ Our company has **50 employees** and needs to provide:
 
 ---
 
-## Network-requirements
+## Network Requirements
 
 Before we start designing, we need to understand the **Threats** we're fighting:
 
@@ -61,7 +62,7 @@ From inside (Internal Threats):
 
 ---
 
-## Security-devices
+## Security Devices
 
 These are the devices we'll use in the design:
 
@@ -100,7 +101,7 @@ If we have more than one server for the Public Services, the Load Balancer distr
 
 ---
 
-## Network-segmentation
+## Network Segmentation
 
 The most important principle in Network Security is **Segmentation** — dividing the network into separate zones. If a hacker gets into one zone, they can't easily move to the rest of the network.
 
@@ -129,7 +130,7 @@ The zones we'll create:
 
 ---
 
-## Topology-diagram
+## Topology Diagram
 
 ```mermaid
 graph TB
@@ -226,9 +227,9 @@ graph TB
 
 ---
 
-## Zone-deep-dive
+## Zone Deep Dive
 
-### Internet-edge
+### Internet Edge
 
 This is the first line of defense — the only entry point from the internet.
 
@@ -261,7 +262,7 @@ graph LR
 
 ---
 
-### Dmz-zone
+### DMZ Zone
 
 The DMZ is a "neutral" zone — not quite the internet and not quite the internal network. The Public Services are placed here.
 
@@ -293,7 +294,7 @@ If a hacker breaches the Web Server in the DMZ, they won't be able to move into 
 
 ---
 
-### Internal-network
+### Internal Network
 
 The employee network is on **VLAN 10** — isolated from the Guest WiFi and from the Servers.
 
@@ -328,7 +329,7 @@ graph LR
 
 ---
 
-### Server-zone
+### Server Zone
 
 The most sensitive point in the network — it holds the most important data.
 
@@ -360,7 +361,7 @@ graph TB
 
 ---
 
-### Guest-wifi
+### Guest WiFi
 
 Guests and customers need internet — but not our internal network.
 
@@ -396,7 +397,7 @@ Client Isolation: ON  ← Important! Prevents guests from seeing each other
 
 ---
 
-### Remote-workers
+### Remote Workers
 
 Employees who work from home need to reach the internal network securely.
 
@@ -434,7 +435,7 @@ sequenceDiagram
 
 ---
 
-## Placement-summary
+## Placement Summary
 
 | Device | Location in the Network | Function |
 |---|---|---|
@@ -452,7 +453,7 @@ sequenceDiagram
 
 ---
 
-## Traffic-flow
+## Traffic Flow
 
 ### Scenario 1: A Customer Opens the Website from the Internet
 
@@ -499,7 +500,7 @@ graph LR
 
 ---
 
-## 9. IP Addressing Scheme
+## IP Addressing Scheme
 
 A table to define the IP ranges for each zone:
 
