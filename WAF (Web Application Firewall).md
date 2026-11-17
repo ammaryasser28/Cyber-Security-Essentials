@@ -1,6 +1,6 @@
 | Topic | Level | Reading Time | Prerequisites |
 |---|---|---|---|
-| WAF (Web Application Firewall) | Intermediate | ~15 min | Defense in Depth Model, basic idea of HTTP requests |
+| WAF (Web Application Firewall) | Intermediate | ~15 min | Firewalls and Network Placement, basic idea of HTTP requests |
 
 > **الهدف من الـ Section ده:**  
 > هتفهم إيه هو الـ WAF بالظبط، إزاي بيقرر يمنع طلب معين، وإيه حدوده اللي محدش يقدر يتخطاها.
