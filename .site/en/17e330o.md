@@ -162,7 +162,7 @@ flowchart LR
 ```
 
 > [!IMPORTANT]
-> Remember: developers must never trust user input. This is the application-layer version of the Defense in Depth Model: the WAF described in the WAF file is one valuable layer, but it is a mitigation, not a substitute for fixing the code that mishandles input.
+> Remember: developers must never trust user input. This is defense in depth at the application layer: the WAF described in the WAF file is one valuable layer, but it is a mitigation, not a substitute for fixing the code that mishandles input.
 
 ## Career Path Connections
 
