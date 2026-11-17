@@ -107,7 +107,7 @@ Implementing **safeguards** such as access control, employee training, and data 
 Implementing **monitoring** to identify cybersecurity events **as they actually happen**, not after it's too late.
 
 > [!NOTE]
-> Detect maps directly to the traffic baselining concept from the Asset Awareness file, and to the SIEM function covered in the Defense in Depth Model file: monitoring only has value if you know what normal looks like first.
+> Detect maps directly to the traffic baselining concept from the Asset Awareness file, and to the SIEM, which collects and correlates those events: monitoring only has value if you know what normal looks like first.
 
 ### Respond
 
