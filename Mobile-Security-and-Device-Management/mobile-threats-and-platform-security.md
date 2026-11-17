@@ -195,7 +195,7 @@ flowchart LR
 سنة 2019 اتلاقت ثغرة اسمها **checkm8** في الـ Boot ROM بتاع iPhones كتير (شرائح A5 لـ A11). بما إن الـ Boot ROM **سيليكون read-only**، Apple **مش قادرة تصلحها**. ده بيوضح ليه الطبقة دي مهمة جداً وصعبة الإصلاح جداً.
 
 > [!IMPORTANT]
-> The chain of trust is only as strong as its first link. A flaw in the one component that cannot be updated (the Boot ROM) cannot be patched, only worked around. This is the hardware-level version of the lesson from the Defense in Depth Model: a single unpatchable weak point matters far more than many patchable ones.
+> The chain of trust is only as strong as its first link. A flaw in the one component that cannot be updated (the Boot ROM) cannot be patched, only worked around. This is the hardware-level version of a core defense-in-depth lesson: a single unpatchable weak point matters far more than many patchable ones.
 
 ## Android Boot Security
 
