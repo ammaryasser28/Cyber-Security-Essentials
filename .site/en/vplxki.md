@@ -113,7 +113,7 @@ flowchart TD
 ```
 
 > [!IMPORTANT]
-> This table restates, from the device point of view, the layer distinction first explained in Defense in Depth Model and covered in full in the WAF file. The key sentence is the same: the firewall decides whether the connection is allowed, the WAF decides whether the request inside it is safe.
+> This table restates, from the device point of view, the layer distinction covered in full in the WAF file. The key sentence is the same: the firewall decides whether the connection is allowed, the WAF decides whether the request inside it is safe.
 
 ## Load Balancer
 
