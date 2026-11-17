@@ -105,7 +105,7 @@ flowchart LR
 ```
 
 > [!NOTE]
-> The perimeter firewall described in Defense in Depth Model works at Layers 3 and 4, which matches the first two types. An NGFW is what reaches higher up the stack, which is why it can catch some things a basic firewall cannot, as the shortcomings section below explains.
+> A basic perimeter firewall works at Layers 3 and 4, which matches the first two types. An NGFW is what reaches higher up the stack, which is why it can catch some things a basic firewall cannot, as the shortcomings section below explains.
 
 ### Default Deny and Rule Order
 
@@ -187,7 +187,7 @@ flowchart LR
 > A firewall will happily allow port 443, and a WAF is what inspects what travels inside it. This is the exact layer distinction explained in the WAF file: the two are complementary, not interchangeable, and a missing WAF leaves a gap a perfect firewall configuration cannot close.
 
 > [!TIP]
-> For the full picture of how firewalls, IDS/IPS, proxies, WAF, SIEM, DLP, and NAC stack together, see Defense in Depth Model. This file and the next two cover the devices themselves; that file covers why they are layered.
+> No single device is the whole defense: firewalls, IDS/IPS, proxies, WAF, SIEM, DLP, and NAC are layered so each one catches what the others miss. This file covers firewalls; Proxies and Load Balancers and Network Access Control and Honeypots cover the rest of the devices.
 
 ## Career Path Connections
 
