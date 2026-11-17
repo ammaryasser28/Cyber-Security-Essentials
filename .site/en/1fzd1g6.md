@@ -62,7 +62,7 @@ flowchart LR
 ```
 
 > [!NOTE]
-> This is the NAC layer named in the Network Security Layer of Defense in Depth Model: only authorized, compliant devices can even join the network. The device-health idea is also the network-level cousin of the trust scoring in Zero Trust Model, where device state feeds the access decision.
+> This is NAC's place in the network layer of defense in depth: only authorized, compliant devices can even join the network. The device-health idea is also the network-level cousin of the trust scoring in Zero Trust Model, where device state feeds the access decision.
 
 ## NAC Posture Assessment and Outcomes
 
